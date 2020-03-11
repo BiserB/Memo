@@ -9,13 +9,41 @@
         <ResourceDictionary>
             <Color x:Key="BlueColor">#1E90FF</Color>
             <Color x:Key="GrayColor">#D3D3D3</Color>
+            <Color x:Key="DarkGrayColor">#A9A9A9</Color>
             <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="GreenColor">#42AD5F</Color>
+            <Color x:Key="DarkGreenColor">#2F4E2F</Color>
+            <Color x:Key="AppBackgroundColor">#E7FBE7</Color>
+
+            <!-- Implicit styles -->
+            <Style TargetType="{x:Type NavigationPage}">
+                <Setter Property="BarBackgroundColor"
+                    Value="{StaticResource GreenColor}" />
+                <Setter Property="BarTextColor"
+                    Value="{StaticResource WhiteColor}" />
+            </Style>
+            <Style TargetType="{x:Type ContentPage}"
+                   ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+            </Style>
+            <Style TargetType="{x:Type TabbedPage}" 
+                   ApplyToDerivedTypes="True">
+                <Setter Property="BarBackgroundColor"
+                    Value="{StaticResource DarkGreenColor}" />
+            </Style>
+
+            <!-- Buttons -->
             <Style TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
             </Style>
             <Style x:Key="DarkButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#302D2D"/>
+                <Setter Property="BackgroundColor" Value="{StaticResource DarkGrayColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
+            </Style>
+            <Style x:Key="GreenButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
             </Style>
         </ResourceDictionary>

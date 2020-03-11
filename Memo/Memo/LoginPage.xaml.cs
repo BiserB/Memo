@@ -9,12 +9,11 @@ using Xamarin.Forms;
 namespace Memo
 {
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    public partial class LoginPage : ContentPage
     {
-        public MainPage()
+        public LoginPage()
         {
             InitializeComponent();
-
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)

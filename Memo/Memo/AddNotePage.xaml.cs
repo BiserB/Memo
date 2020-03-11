@@ -26,6 +26,8 @@ namespace Memo
                 Date = DateTime.UtcNow
             };
 
+            noteEntry.Text = string.Empty;
+
             await App.Database.SaveNoteAsync(newNote);
             //await Navigation.PushAsync(new ListPage());
 

@@ -1,8 +1,6 @@
 ﻿using Memo.Models;
 using SQLite;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Memo.Data
@@ -25,20 +23,18 @@ namespace Memo.Data
         public Task<Note> GetNoteAsync(int id)
         {
             return database.Table<Note>()
-                            .Where(i => i.ID == id)
+                            .Where(n => n.Id == id)
                             .FirstOrDefaultAsync();
         }
 
         public Task<int> SaveNoteAsync(Note note)
         {
-            if (note.ID != 0)
+            if (note.Id != 0)
             {
                 return database.UpdateAsync(note);
             }
-            else
-            {
-                return database.InsertAsync(note);
-            }
+
+            return database.InsertAsync(note);
         }
 
         public Task<int> DeleteNoteAsync(Note note)
