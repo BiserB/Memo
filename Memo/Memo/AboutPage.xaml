@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Memo.AboutPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="{Binding AboutContent}"/>
+            <Label TextColor="Black">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Used tools:" TextDecorations="Underline"/>
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Microsoft Visual Studio Community 2019 Version 16.4.5" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Microsoft .NET Framework Version 4.8.03752" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Xamarin 16.4.000.311 " />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Xamarin Designer 16.4.0.475" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Xamarin Templates 16.4.25" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Xamarin.Android SDK 10.1.4.0" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Dependencies:" TextDecorations="Underline"/>
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="NETStandard.Library 2.0.3" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="sqlite-net-pcl 1.6.292" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Xamarin.Essentials 1.3.1" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="Xamarin.Forms 4.3.0.908675" />
+                        <Span Text="{x:Static x:Environment.NewLine}" />
+                        <Span Text="--------------------------" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

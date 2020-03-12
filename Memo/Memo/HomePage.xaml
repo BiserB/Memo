@@ -7,7 +7,9 @@
              mc:Ignorable="d"
              x:Class="Memo.HomePage">
     <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="+" 
+                     Clicked="OnAddNoteClicked" />
     </TabbedPage.ToolbarItems>
     <local:ListPage Title="List"/>
-    <local:AddNotePage Title="Add"/>
+    <local:AboutPage Title="About"/>
 </TabbedPage>

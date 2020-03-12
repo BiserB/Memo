@@ -23,16 +23,18 @@ namespace Memo
             Note newNote = new Note()
             {
                 Text = noteEntry.Text,
-                Date = DateTime.UtcNow
+                CreatedOn = DateTime.UtcNow
             };
 
             noteEntry.Text = string.Empty;
 
             await App.Database.SaveNoteAsync(newNote);
-            //await Navigation.PushAsync(new ListPage());
+            
+            await Navigation.PushAsync(new HomePage());
 
-            var masterPage = this.Parent as TabbedPage;
-            masterPage.CurrentPage = masterPage.Children[0];
+            // -- when the page is child of tabbed page
+            // var masterPage = this.Parent as TabbedPage;
+            // masterPage.CurrentPage = masterPage.Children[0];
         }
 
         private void OnDeleteClicked(object sender, EventArgs e)

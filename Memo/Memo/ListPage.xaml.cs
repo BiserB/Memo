@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Memo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,9 @@ namespace Memo
 
         private void OnNotesItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var selectedNote = (Note)notes.SelectedItem;
 
+            Navigation.PushAsync(new NoteDetailsPage(selectedNote));
         }
     }
 }

@@ -10,16 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace Memo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : TabbedPage
+    public partial class AboutPage : ContentPage
     {
-        public HomePage()
+        public AboutPage()
         {
             InitializeComponent();
-        }
-        async void OnAddNoteClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddNotePage());
+            BindingContext = this;
         }
 
+        public string AboutContent { get; } = "This is sample Xamarin.Forms application for testing purposes.";
     }
 }
