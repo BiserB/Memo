@@ -6,6 +6,10 @@
              mc:Ignorable="d"
              x:Class="Memo.App">
     <Application.Resources>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+            <On Platform="Android" Value="FontAwesome5Brands.otf#Regular" />            
+        </OnPlatform>
+
         <ResourceDictionary>
             <Color x:Key="BlueColor">#1E90FF</Color>
             <Color x:Key="GrayColor">#D3D3D3</Color>

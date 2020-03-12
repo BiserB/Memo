@@ -17,11 +17,11 @@ namespace Memo
             this.selectedNote = selectedNote;
 
             noteContentEntry.Text = selectedNote.Text;
-            createdOn.Text = $"Created on: {selectedNote.CreatedOn.ToString(AppConst.NoteDateFormat)}";
+            createdOn.Text = $"Created on: {selectedNote.CreatedOn.ToLocalTime().ToString(AppConst.NoteDateFormat)}";
 
             if (selectedNote.UpdatedOn != null)
             {
-                updatedOn.Text = $"Last change on: {selectedNote.UpdatedOn?.ToString(AppConst.NoteDateFormat)}";
+                updatedOn.Text = $"Last change on: {selectedNote.UpdatedOn?.ToLocalTime().ToString(AppConst.NoteDateFormat)}";
             }
         }
 

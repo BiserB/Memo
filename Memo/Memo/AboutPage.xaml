@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="Memo.AboutPage">
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout Margin="20" VerticalOptions="FillAndExpand">
             <Label Text="{Binding AboutContent}"/>
             <Label TextColor="Black">
                 <Label.FormattedText>
@@ -40,6 +40,23 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="&#xf3ca;" FontFamily="{StaticResource FontAwesomeBrands}" FontSize="48"/>
+                        <Span Text="   Font Awesome demo"/>
+                    </FormattedString>                    
+                </Label.FormattedText>                
+            </Label>
+            <Label HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Memo" FontAttributes="Bold"/>
+                        <Span Text=" ©" FontSize="Micro"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
