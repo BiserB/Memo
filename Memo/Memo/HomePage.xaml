@@ -7,9 +7,10 @@
              mc:Ignorable="d"
              x:Class="Memo.HomePage">
     <TabbedPage.ToolbarItems>
-        <ToolbarItem Text="+" 
+        <ToolbarItem IconImageSource="plus_black.png"
                      Clicked="OnAddNoteClicked" />
     </TabbedPage.ToolbarItems>
     <local:ListPage Title="List"/>
+    <local:MapPage Title="Maps"/>
     <local:AboutPage Title="About"/>
 </TabbedPage>
