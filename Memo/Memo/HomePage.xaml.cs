@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Memo.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Memo
         }
         async void OnAddNoteClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddNotePage());
+            await Navigation.PushAsync(new AddNotePage() { BindingContext = new Note() });
         }
 
     }
