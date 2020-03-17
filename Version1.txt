@@ -1,0 +1,4 @@
+A simple application that uses:
+* Xamarin.Forms
+* SQLite
+* Xamarin.Forms.Maps
