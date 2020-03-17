@@ -16,9 +16,9 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="save"  Text="Save" 
                     Clicked="OnSaveClicked" />
-            <Button x:Name="delete" Grid.Column="1"
-                    Text="Delete" 
-                    Clicked="OnDeleteClicked"/>
+            <Button x:Name="cancel" Grid.Column="1"
+                    Text="Cancel" 
+                    Clicked="OnCancelClicked"/>
         </Grid>
     </StackLayout>
 </ContentPage>

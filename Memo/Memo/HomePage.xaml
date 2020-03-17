@@ -8,7 +8,7 @@
              x:Class="Memo.HomePage">
     <TabbedPage.ToolbarItems>
         <ToolbarItem IconImageSource="plus_black.png"
-                     Clicked="OnAddNoteClicked" />
+                     Command="{Binding NavCommand}"/>
     </TabbedPage.ToolbarItems>
     <local:ListPage Title="List"/>
     <local:MapPage Title="Maps"/>

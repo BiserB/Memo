@@ -37,9 +37,9 @@ namespace Memo
             // masterPage.CurrentPage = masterPage.Children[0];
         }
 
-        private void OnDeleteClicked(object sender, EventArgs e)
+        private async void OnCancelClicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
     }
 }

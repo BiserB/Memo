@@ -1,4 +1,5 @@
 ﻿using Memo.Models;
+using Memo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +14,15 @@ namespace Memo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HomePage : TabbedPage
     {
+        HomeVM viewModel;
+
         public HomePage()
         {
             InitializeComponent();
-        }
-        async void OnAddNoteClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddNotePage() { BindingContext = new Note() });
-        }
 
+            this.viewModel = new HomeVM();
+
+            this.BindingContext = this.viewModel;
+        }
     }
 }
