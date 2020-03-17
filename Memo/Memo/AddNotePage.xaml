@@ -5,11 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Memo.AddNotePage">
-    <StackLayout Margin="20">
+    <StackLayout>
         <Label Text="Write your note:"
                TextColor="{StaticResource GrayColor}"/>
         <Entry x:Name="noteEntry"/>
-        <Grid>
+        <Grid Margin="20, 0, 20, 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -20,5 +20,30 @@
                     Text="Cancel" 
                     Clicked="OnCancelClicked"/>
         </Grid>
+        <ListView x:Name="venueList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="20, 0, 20, 0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding Name}" FontAttributes="Bold" />
+                            <Label Text="{Binding Location.Address}" 
+                                   Grid.Row="1"
+                                   TextColor="{StaticResource GreenColor}"/>
+                            <Label Text="{Binding Location.Distance, StringFormat='{0} meters'}"
+                                   Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
+    
 </ContentPage>

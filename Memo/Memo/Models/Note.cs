@@ -10,7 +10,8 @@ namespace Memo.Models
         private string text;
         private DateTime createdOn;
         private DateTime? updatedOn;
-        
+        private string venueName;
+
         [PrimaryKey, AutoIncrement]
         public int Id
         {
@@ -51,6 +52,17 @@ namespace Memo.Models
                 this.OnPropertyChanged(nameof(UpdatedOn));
             }
         }
+
+        public string VenueName
+        {
+            get { return venueName; }
+            set { venueName = value; }
+        }
+
+        public double? Lat { get; set; }
+
+        public double? Lng { get; set; }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

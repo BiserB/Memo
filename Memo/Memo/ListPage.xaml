@@ -17,7 +17,21 @@
               ItemSelected="OnNotesItemSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Text}"/>
+                <ViewCell>
+                    <Grid Padding="20, 0, 20, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="{Binding Text}" FontAttributes="Bold" />
+                        <Label Text="{Binding VenueName}" 
+                               Grid.Row="1"
+                               TextColor="{StaticResource GreenColor}"/>
+                    </Grid>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
