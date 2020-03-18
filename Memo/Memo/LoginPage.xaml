@@ -6,7 +6,12 @@
              mc:Ignorable="d"
              x:Class="Memo.LoginPage">
 
-    <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
+    <StackLayout Margin="20, 0, 20, 20" VerticalOptions="StartAndExpand">
+        <Image x:Name="iconImage"
+               Aspect="AspectFit"
+               HorizontalOptions="FillAndExpand"
+               HeightRequest="150"
+               Margin="0, 0, 0, 50"/>
         <Label Text="Please LOGIN" FontSize="Large" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" 

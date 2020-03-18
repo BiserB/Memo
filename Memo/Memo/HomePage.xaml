@@ -7,10 +7,10 @@
              mc:Ignorable="d"
              x:Class="Memo.HomePage">
     <TabbedPage.ToolbarItems>
-        <ToolbarItem IconImageSource="plus_black.png"
+        <ToolbarItem IconImageSource="add_circle_outline.png"
                      Command="{Binding NavCommand}"/>
     </TabbedPage.ToolbarItems>
-    <local:ListPage Title="List"/>
-    <local:MapPage Title="Maps"/>
-    <local:AboutPage Title="About"/>
+    <local:ListPage Title="List" IconImageSource="view_list.png"/>
+    <local:MapPage Title="Maps" IconImageSource="map.png"/>
+    <local:AboutPage Title="About" IconImageSource="info_outline.png"/>
 </TabbedPage>
