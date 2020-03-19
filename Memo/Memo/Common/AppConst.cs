@@ -13,5 +13,7 @@ namespace Memo.Common
         public static string ClientId = @"LV2FH2T2TPHZV50UMHRP4NNRXWEJTI1BLOY1UTIFOEKH1215";
 
         public static string ClientSecret = @"0GVMDX42A4C0PKDEIRXKO11N134RFVLEVCC2AONCLZOLK2LQ";
+
+        public static string AzureWebApp = @"https://memoweb.azurewebsites.net";
     }
 }

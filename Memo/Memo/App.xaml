@@ -50,6 +50,11 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource WhiteColor}"/>
             </Style>
+            <Style x:Key="LinkButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource AppBackgroundColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource DarkGreenColor}"/>
+                <Setter Property="BorderWidth" Value="0"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -3,6 +3,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
+using Microsoft.WindowsAzure.MobileServices;
 using System;
 
 namespace Memo.Droid
@@ -28,7 +29,7 @@ namespace Memo.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
-
+            CurrentPlatform.Init();
 
             LoadApplication(new App());
         }

@@ -16,7 +16,7 @@ namespace Memo
         {
             InitializeComponent();
             
-            iconImage.Source = ImageSource.FromResource("Memo.Assets.Images.login_logo.png", typeof(LoginPage));
+            iconImage.Source = ImageSource.FromResource("Memo.Assets.Images.lock_open.png", typeof(LoginPage));
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)
@@ -32,6 +32,11 @@ namespace Memo
             {
                 Navigation.PushAsync(new HomePage());
             }
+        }
+
+        private void OnRegister_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RegisterPage());
         }
     }
 }

@@ -12,12 +12,26 @@
                HorizontalOptions="FillAndExpand"
                HeightRequest="150"
                Margin="0, 0, 0, 50"/>
-        <Label Text="Please LOGIN" FontSize="Large" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" 
-               TextColor="{StaticResource GreenColor}"/>
-        <Entry x:Name="UserEmail" Placeholder="Email" />
-        <Entry x:Name="UserPassword" Placeholder="Password"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Please LOGIN     or" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" 
+                   TextColor="{StaticResource GreenColor}"/>
+            <Button x:Name="register" 
+                    Grid.Column="1"
+                    FontSize="Large"
+                    Text="REGISTER" 
+                    Clicked="OnRegister_Clicked"
+                    Style="{StaticResource LinkButton}"/>
+        </Grid>
+        
+        <Entry x:Name="UserEmail" Placeholder="Email" Keyboard="Email"/>
+        <Entry x:Name="UserPassword" Placeholder="Password" IsPassword="True"/>
         <Button x:Name="LoginButton" 
                 Text="Log In" 
                 Clicked="LoginButton_Clicked"
