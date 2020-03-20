@@ -1,11 +1,13 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
 namespace Memo.Models
 {
-    public class Users : INotifyPropertyChanged
+    [DataTable("Users")]
+    public class User : INotifyPropertyChanged
     {
         private string id;
         private string email;

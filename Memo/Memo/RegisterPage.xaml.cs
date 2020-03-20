@@ -33,13 +33,13 @@ namespace Memo
                 return;
             }
 
-            Users user = new Users()
+            User user = new User()
             {
                 Email = userEmail.Text,
-                Password = password.Text
+                Password = CryptoService.HashPassword(password.Text)
             };
 
-            var userTable = App.MobileService.GetTable<Users>();
+            var userTable = App.MobileService.GetTable<User>();
 
             await userTable.InsertAsync(user);
 

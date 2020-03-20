@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Memo.Common;
+using Memo.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -19,19 +21,28 @@ namespace Memo
             iconImage.Source = ImageSource.FromResource("Memo.Assets.Images.lock_open.png", typeof(LoginPage));
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
+        private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             bool isEmptyEmail = string.IsNullOrEmpty(UserEmail.Text);
             bool isEmptyPass = string.IsNullOrEmpty(UserPassword.Text);
 
             if (isEmptyEmail || isEmptyPass)
             {
+                return;
+            }
 
-            }
-            else
+            var user = (await App.MobileService.GetTable<User>()
+                                .Where(u => u.Email == UserEmail.Text)
+                                .ToListAsync())
+                                .FirstOrDefault();            
+            
+            if (user == null || !CryptoService.IsValidPassword(UserPassword.Text, user.Password))
             {
-                Navigation.PushAsync(new HomePage());
+                await DisplayAlert("Error", "Inavlid username or password", "Ok");
+                return;
             }
+            
+            await Navigation.PushAsync(new HomePage());
         }
 
         private void OnRegister_Clicked(object sender, EventArgs e)
