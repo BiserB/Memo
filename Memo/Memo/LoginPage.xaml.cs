@@ -41,6 +41,8 @@ namespace Memo
                 await DisplayAlert("Error", "Inavlid username or password", "Ok");
                 return;
             }
+
+            App.User = user;
             
             await Navigation.PushAsync(new HomePage());
         }

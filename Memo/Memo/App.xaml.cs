@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Microsoft.WindowsAzure.MobileServices;
 using Memo.Common;
+using Memo.Models;
 
 namespace Memo
 {
@@ -43,6 +44,9 @@ namespace Memo
                 return mobileService;
             }
         }
+
+        public static User User { get; set; }
+
 
         protected override void OnStart()
         {

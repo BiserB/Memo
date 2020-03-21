@@ -1,19 +1,20 @@
-﻿using SQLite;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using SQLite;
 using System;
 using System.ComponentModel;
 
 namespace Memo.Models
 {
+    [DataTable("Notes")]
     public class Note : INotifyPropertyChanged
     {
-        private int id;
+        private string id;
         private string text;
         private DateTime createdOn;
         private DateTime? updatedOn;
         private string venueName;
 
-        [PrimaryKey, AutoIncrement]
-        public int Id
+        public string Id
         {
             get { return id; }
             set
@@ -62,6 +63,8 @@ namespace Memo.Models
         public double? Lat { get; set; }
 
         public double? Lng { get; set; }
+
+        public string UserId { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

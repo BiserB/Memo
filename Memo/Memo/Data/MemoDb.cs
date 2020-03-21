@@ -20,7 +20,7 @@ namespace Memo.Data
             return database.Table<Note>().ToListAsync();
         }
 
-        public Task<Note> GetNoteAsync(int id)
+        public Task<Note> GetNoteAsync(string id)
         {
             return database.Table<Note>()
                             .Where(n => n.Id == id)
@@ -29,7 +29,7 @@ namespace Memo.Data
 
         public Task<int> SaveNoteAsync(Note note)
         {
-            if (note.Id != 0)
+            if (note.Id != null)
             {
                 return database.UpdateAsync(note);
             }

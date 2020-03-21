@@ -41,7 +41,8 @@ namespace Memo
             Note newNote = new Note()
             {
                 Text = noteEntry.Text,
-                CreatedOn = DateTime.UtcNow
+                CreatedOn = DateTime.UtcNow,
+                UserId = App.User.Id
             };
 
             var selectedVenue = (Venue)venueList.SelectedItem;
@@ -55,13 +56,13 @@ namespace Memo
 
             noteEntry.Text = string.Empty;
 
-            await App.Database.SaveNoteAsync(newNote);
-            
-            await Navigation.PushAsync(new HomePage());
+            await App.MobileService.GetTable<Note>().InsertAsync(newNote);
 
-            // -- when the page is child of tabbed page
-            // var masterPage = this.Parent as TabbedPage;
-            // masterPage.CurrentPage = masterPage.Children[0];
+            //await App.Database.SaveNoteAsync(newNote); // save to SQLite DB
+
+            await DisplayAlert("Success", "Inserted", "Ok");
+
+            await Navigation.PushAsync(new HomePage());
         }
 
         private async void OnCancelClicked(object sender, EventArgs e)
