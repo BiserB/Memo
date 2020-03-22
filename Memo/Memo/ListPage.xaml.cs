@@ -22,7 +22,11 @@ namespace Memo
         {
             base.OnAppearing();
 
-            notes.ItemsSource = await App.Database.GetNotesAsync();
+            // notes.ItemsSource = await App.Database.GetNotesAsync(); // read from SQLite Database
+
+            notes.ItemsSource = await App.MobileService.GetTable<Note>()
+                                         .Where(n => n.UserId == App.User.Id)
+                                         .ToListAsync();
         }
 
         private void OnNotesItemSelected(object sender, SelectedItemChangedEventArgs e)
