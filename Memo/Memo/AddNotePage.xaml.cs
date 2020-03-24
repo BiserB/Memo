@@ -56,7 +56,7 @@ namespace Memo
 
             noteEntry.Text = string.Empty;
 
-            await App.MobileService.GetTable<Note>().InsertAsync(newNote);
+            App.AzureDb.SaveNoteAsync(newNote);
 
             //await App.Database.SaveNoteAsync(newNote); // save to SQLite DB
 

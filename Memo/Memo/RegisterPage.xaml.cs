@@ -39,9 +39,7 @@ namespace Memo
                 Password = CryptoService.HashPassword(password.Text)
             };
 
-            var userTable = App.MobileService.GetTable<User>();
-
-            await userTable.InsertAsync(user);
+            App.AzureDb.InsertUser(user);
 
             await DisplayAlert("Success", "Inserted", "Ok");
         }

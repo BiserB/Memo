@@ -24,9 +24,7 @@ namespace Memo
 
             // notes.ItemsSource = await App.Database.GetNotesAsync(); // read from SQLite Database
 
-            notes.ItemsSource = await App.MobileService.GetTable<Note>()
-                                         .Where(n => n.UserId == App.User.Id)
-                                         .ToListAsync();
+            notes.ItemsSource = await App.AzureDb.GetNotesAsync();
         }
 
         private void OnNotesItemSelected(object sender, SelectedItemChangedEventArgs e)

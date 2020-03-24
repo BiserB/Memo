@@ -39,6 +39,9 @@
                                    TextColor="{StaticResource GreenColor}"/>
                             <Label Text="{Binding Location.Distance, StringFormat='{0} meters'}"
                                    Grid.Column="1"/>
+                            <Label Text="{Binding Location.Lat}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

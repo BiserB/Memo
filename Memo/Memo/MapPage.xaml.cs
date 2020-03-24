@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
+using Memo.Models;
 
 namespace Memo
 {
@@ -57,12 +58,16 @@ namespace Memo
         {
             base.OnAppearing();
             
-            if (appMap.IsShowingUser)
-            {
-                this.StartPositioning();
-            }
+            //if (appMap.IsShowingUser)
+            //{
+            //    this.StartPositioning();
+            //}
 
-            var notes = await App.Database.GetNotesAsync();
+            this.StartPositioning();
+
+            //var notes = await App.Database.GetNotesAsync();
+
+            var notes = await App.AzureDb.GetNotesAsync();
 
             foreach (var note in notes)
             {

@@ -12,7 +12,7 @@ namespace Memo
     public partial class App : Application
     {
         private static MemoDb database;
-        private static MobileServiceClient mobileService;
+        private static MemoAzureDb azureDb;
 
         public App()
         {
@@ -33,15 +33,15 @@ namespace Memo
             }
         }
 
-        public static MobileServiceClient MobileService
+        public static MemoAzureDb AzureDb
         {
             get
             {
-                if (mobileService == null)
+                if (azureDb == null)
                 {
-                    mobileService = new MobileServiceClient(AppConst.AzureWebApp);
+                    azureDb = new MemoAzureDb();
                 }
-                return mobileService;
+                return azureDb;
             }
         }
 

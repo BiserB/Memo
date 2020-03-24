@@ -30,14 +30,18 @@ namespace Memo
             this.selectedNote.Text = noteContentEntry.Text;
             this.selectedNote.UpdatedOn = DateTime.UtcNow;
 
-            await App.Database.SaveNoteAsync(this.selectedNote);
+            //await App.Database.SaveNoteAsync(this.selectedNote);
+
+            App.AzureDb.SaveNoteAsync(this.selectedNote);
 
             await Navigation.PushAsync(new HomePage());
         }
 
         private async void delete_Clicked(object sender, System.EventArgs e)
         {
-            await App.Database.DeleteNoteAsync(this.selectedNote);
+            //await App.Database.DeleteNoteAsync(this.selectedNote);
+
+            App.AzureDb.DeleteNoteAsync(this.selectedNote);
 
             await Navigation.PushAsync(new HomePage());
         }

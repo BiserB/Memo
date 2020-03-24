@@ -23,20 +23,17 @@ namespace Memo
 
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
-            bool isEmptyEmail = string.IsNullOrEmpty(UserEmail.Text);
-            bool isEmptyPass = string.IsNullOrEmpty(UserPassword.Text);
+            bool isEmptyEmail = string.IsNullOrEmpty(userEmail.Text);
+            bool isEmptyPass = string.IsNullOrEmpty(userPassword.Text);
 
             if (isEmptyEmail || isEmptyPass)
             {
                 return;
             }
 
-            var user = (await App.MobileService.GetTable<User>()
-                                .Where(u => u.Email == UserEmail.Text)
-                                .ToListAsync())
-                                .FirstOrDefault();            
+            var user = await App.AzureDb.GetUser(userEmail.Text, userPassword.Text);          
             
-            if (user == null || !CryptoService.IsValidPassword(UserPassword.Text, user.Password))
+            if (user == null)
             {
                 await DisplayAlert("Error", "Inavlid username or password", "Ok");
                 return;

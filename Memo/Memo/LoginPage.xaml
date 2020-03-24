@@ -30,9 +30,9 @@
                     Style="{StaticResource LinkButton}"/>
         </Grid>
         
-        <Entry x:Name="UserEmail" Placeholder="Email" Keyboard="Email"/>
-        <Entry x:Name="UserPassword" Placeholder="Password" IsPassword="True"/>
-        <Button x:Name="LoginButton" 
+        <Entry x:Name="userEmail" Placeholder="Email" Keyboard="Email"/>
+        <Entry x:Name="userPassword" Placeholder="Password" IsPassword="True"/>
+        <Button x:Name="loginButton" 
                 Text="Log In" 
                 Clicked="LoginButton_Clicked"
                 Style="{StaticResource GreenButton}"/>
