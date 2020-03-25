@@ -1,0 +1,10 @@
+Implemented functionality:
+
+Works with Azure SQL
+
+* Register page 
+* Login page 
+* Tabbed page with navigation
+* List of all notes
+* Add new note with description and venue
+* Display on the map pins with venue and description
